@@ -44,12 +44,36 @@ body {
 }
 
 .card__img-container {
+    position: relative;
     width: 100%;
+    height: max-content;
+    background-color: hsla(178, 100%, 50%, 0.8);
+    margin-bottom: 1.5rem;
+}
+
+.card__img-container:hover .card__hidden{
+    opacity: 1;
+}
+.card__img-container:hover .card__image{
+    opacity: 0.3;
 }
 
 .card__image {
     max-width: 100%;
-    margin-bottom: 1.5rem;
+    display: block;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.card__hidden {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;;
+    transition: opacity 1s;
 }
 
 .card__content {
@@ -108,6 +132,11 @@ body {
 
 .card__author span {
     color: var(--white);
+}
+
+.hover:hover {
+    cursor: pointer;
+    color: var(--cyan);
 }
 
 @media screen and (min-width: 43rem) {
